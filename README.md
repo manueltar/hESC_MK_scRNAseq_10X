@@ -94,12 +94,24 @@ $ bash ~/Scripts/Wraper_scripts/194_RPCA_and_clustering_post_genotyping.sh /scra
 s
 
 
-
-------------------------------------------------> TO DO
+# 18. Final cell annotation
 
 ----> Jupyter notebook: Post_G_final_cell_annotation.ipynb # Add UMAP marker genes and UMAP Sample ID
 
-$ bash ~/Scripts/Wraper_scripts/195_SCRNA_10X_DE_per_identity.sh /group/soranzo/manuel.tardaguila/2025_hESC_MK_SCRNAseq_10X/no_competition/ DE_per_identity \
-# Optimize code for R multiparallel run
+# 19. DE results accounting for time variation
+
+
+"Conclusion: Use the Full Model
+The simple model's results for both cell types are unreliable because they are based on an invalid statistical unit that pools two different biological stat\
+es.
+
+Your Full Model (∼time_point+Genotype) is the correct way to handle these samples because it uses the time_point factor to statistically control for the mas\
+sive biological/technical differences caused by the cell count and maturation shift.
+
+Trust the full model's result: A true Genotype effect is only revealed when the time-dependent noise is removed."
+
+
+$ bash ~/Scripts/Wraper_scripts/196_SCRNA_10X_DE_per_identity_with_time_point.sh /group/soranzo/manuel.tardaguila/2025_hESC_MK_SCRNAseq_10X/no_competition/ \
+DE_per_identity_with_time_point
 
 
