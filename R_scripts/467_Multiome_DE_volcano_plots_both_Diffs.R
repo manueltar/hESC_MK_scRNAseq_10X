@@ -335,8 +335,7 @@ volcano_plots_function = function(option_list)
                                 y=minuslog10padj)) +
          geom_vline(xintercept=c(-0.1,0.1), color="gray", linetype='dashed',linewidth=1)+
          geom_hline(yintercept=c(1.3), color="gray", linetype='dashed',linewidth=1)+
-         geom_point(data=DE_results_sel_contrast_sel[which(DE_results_sel_contrast_sel$minuslog10padj < 1.3 & DE_results_sel_contrast_sel$abslogfc < 0.1),],
-                    color="gray",fill="gray", stroke=0.2, shape=21, size=2)+
+         geom_point(color="gray",fill="gray", stroke=0.2, shape=21, size=2)+
          geom_point(data=DE_results_sel_contrast_sel[which(DE_results_sel_contrast_sel$minuslog10padj >= 1.3 & DE_results_sel_contrast_sel$log2FoldChange <= -0.1),],
                     color="black",fill="blue", stroke=0.2, shape=21, size=4)+
          geom_point(data=DE_results_sel_contrast_sel[which(DE_results_sel_contrast_sel$minuslog10padj >= 1.3 & DE_results_sel_contrast_sel$log2FoldChange >= 0.1),],
